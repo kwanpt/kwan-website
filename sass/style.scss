@@ -1,524 +1,647 @@
 body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: black;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 300;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: black;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 ::selection {
-    color: white;
-    background:#FE171F;
+  color: white;
+  background:#FE171F;
 }
 
 .footer{
-    height:30px;
+  height:30px;
 }
 
 a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
     text-decoration: none;
     color: inherit;
-    &:hover{
-        text-decoration: none;
-        color: inherit;
-    }
+  }
 }
 
-
 .signup {
-    text-align: center;
-    padding: 15px 20px;
-    background: #FE171F;
-    border: 1px solid #FE171F;
-    -webkit-transition: background 0.2s linear;
-    -moz-transition: background 0.2s linear;
-    transition: background 0.2s linear;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    float: left;
-    font-size: 16px;
-    &:hover {
-        background: transparent;
-        color: #FE171F;
-    }
+  text-align: center;
+  padding: 15px 20px;
+  background: #FE171F;
+  border: 1px solid #FE171F;
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  float: left;
+  font-size: 16px;
+
+  &:hover {
+    background: transparent;
+    color: #FE171F;
+  }
 }
 
 td.zero {
-    width: 1%;
-    white-space: nowrap;
+  width: 1%;
+  white-space: nowrap;
 }
 
 table,td,tr {
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    border-spacing: 0px;
-    border-collapse: separate;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-spacing: 0px;
+  border-collapse: separate;
 }
 
 .logo {
-    width: 155px;
-    height: 55px;
-    background-image: url(../images/kwan-logo.svg);
-    background-size: 155px 55px;
+  width: 155px;
+  height: 55px;
+  background-image: url(../images/kwan-logo.svg);
+  background-size: 155px 55px;
 }
 
 .header {
-    background: rgba(255,255,255,0.0);
-    margin: 0px;
-    border: 0px;
-    padding: 25px 30px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-weight: 300;
-    font-size: 16px;
-    color: white;
-    display: block;
-}
+  background: rgba(255,255,255,0.0);
+  margin: 0px;
+  border: 0px;
+  padding: 25px 30px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  font-size: 16px;
+  color: white;
+  display: block;
+  pointer-events: initial;
 
-.header {
-    pointer-events: initial;
+  td {
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+
+  span {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
 }
 
 .next {
-    opacity: 0.6;
-}
+  opacity: 0.6;
 
-.next:hover {
+  &:hover {
     opacity: 1;
+  }
 }
 
 .prev {
-    height: 45px;
-    ;
-}
-
-.header td {
-    vertical-align: middle;
-}
-
-.header a {
-    display: inline-block;
-    margin: 0 10px;
-    vertical-align: middle;
-}
-
-.header span {
-    display: inline-block;
-    margin: 0 10px;
-    vertical-align: middle;
+  height: 45px;
+  ;
 }
 
 .middle a {
-    margin: 0 16px;
-    opacity: 0.8;
-}
+  margin: 0 16px;
+  opacity: 0.8;
 
-.middle a:hover {
+  &:hover {
     opacity: 1;
+  }
 }
 
 .social {
   float:right;
-}
 
-.social a:hover{
-  opacity:0.65;
-}
-
-#facebook {
+  a{
     width: 51px;
     height: 51px;
     background: url(/images/socialKwan.svg);
-    background-position: -52px 0;
-}
 
-#twitter {
-    width: 51px;
-    height: 51px;
-    background: url(/images/socialKwan.svg);
-    background-position: -157px 0;
-}
+    &:hover{
+      opacity:0.65;
+    }
 
-#github {
-  width: 51px;
-  height: 51px;
-  background: url(/images/socialKwan.svg);
-  background-position: -105px 0;
-}
+    &#facebook {
+      background-position: -52px 0;
+    }
 
-#redis {
-  width: 51px;
-  height: 51px;
-  background: url(/images/socialKwan.svg);
-  background-position: 0 0;
+    &#twitter {
+      background-position: -157px 0;
+    }
+
+    &#github {
+      background-position: -105px 0;
+    }
+
+    &#reddit {
+      background-position: 0 0;
+    }
+  }
 }
 
 .content {
-    position: absolute;
-    background-color: rgba(0,0,0,0);
-    overflow: auto;
-    margin: auto auto auto -450px;
-    ;left: 50%;
-    width: 900px;
-    display: table;
-    height: 100%;
-    padding-top: 100px;
-    padding-bottom: 88px;
-}
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  overflow: auto;
+  margin: auto auto auto -450px;
+  ;left: 50%;
+  width: 900px;
+  display: table;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 88px;
 
-.content h1 {
+  h1 {
     font-size: 45px;
     font-weight: 500;
     letter-spacing: 0.5px;
     margin: 0 0 20px 0;
-}
+  }
 
-.content span {
+  span {
     font-size: 20px;
     font-weight: 300;
     line-height: 30px;
-}
 
-.content span.redline {
-  display: block;
-  margin: 25px 0 0 0;
-  border: 1px solid #FE171F;
-  width: 35px;
-}
+    &.redline {
+      display: block;
+      margin: 25px 0 0 0;
+      border: 1px solid #FE171F;
+      width: 35px;
+    }
 
-.content span em {
-    font-weight: 500;
-    color:#FE171F;
-    font-style: normal;
-}
+    em {
+      font-weight: 500;
+      color:#FE171F;
+      font-style: normal;
+    }
+  }
 
-.content table {
-    margin-top: 32px;
+  table {
+   margin-top: 32px;
+  }
 }
 
 .sidenav {
-    position: absolute;
-    background-color: rgba(0,0,0,0);
-    overflow: auto;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    right: 40px;
-    height: 100%;
-}
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  overflow: auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  height: 100%;
 
-.sidenav span {
+  span {
     margin-right: 10px;
+  }
 }
 
 .line {
-    height: 20px;
-    width: 1px;
-    background: transparent;
-    margin: 0 auto;
+  height: 20px;
+  width: 1px;
+  background: transparent;
+  margin: 0 auto;
 }
 
 .navitem {
-    width: 10px;
-    height: 10px;
-    display: table-cell;
-    -webkit-transition: background 0.1s linear;
-    -moz-transition: background 0.1s linear;
-    transition: background 0.1s linear;
-    border: 1px solid white;
-    vertical-align: middle;
-    -moz-border-radius: 17px;
-    -webkit-border-radius: 17px;
-    -khtml-border-radius: 17px;
-    -o-border-radius: 17px;
-    border-radius: 17px;
-}
+  width: 10px;
+  height: 10px;
+  display: table-cell;
+  -webkit-transition: background 0.1s linear;
+  -moz-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+  border: 1px solid white;
+  vertical-align: middle;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  -khtml-border-radius: 17px;
+  -o-border-radius: 17px;
+  border-radius: 17px;
 
-.navitem:hover,.navitem.selected {
+  &.selected{
     background: white;
     border: 1px solid rgba(255,255,255,1);
-}
+  }
 
-.navitem img {
+  &:hover {
+    background: white;
+    border: 1px solid rgba(255,255,255,1);
+  }
+
+  img {
     display: table;
     margin: 0 auto;
+  }
 }
 
+
+
 #navtitle1,#navtitle2,#navtitle3,#navtitle4,#navtitle5 {
-    float: right;
+  float: right;
 }
 
 #sensor {
-    position: absolute;
-    background-color: rgba(0,0,0,0);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 #blocker {
-    position: absolute;
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
-    opacity: 1;
-    top: 0px;
-    left: 0px;
+  position: absolute;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  top: 0px;
+  left: 0px;
 }
 
 .background {
-    position: absolute;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-}
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 
-#background1 {
+  &#background1 {
     background-image: url(../images/bg1.jpg);
-}
+  }
 
-#background2 {
+  &#background2 {
     background-image: url(../images/bg2.jpg);
-}
+  }
 
-#background3 {
+  &#background3 {
     background-image: url(../images/bg3.jpg);
-}
+  }
 
-#background4 {
+  &#background4 {
     background-image: url(../images/bg4.jpg);
-}
-
-#background5 {
-    background-image: url(../images/bg5.jpg);
+  }
 }
 
 #bouncy {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto 90px;
 }
 
 #bouncy a {
-    display: table;
-    margin: 0 auto;
-    width: 40px;
-    height: 20px;
-    background-size: 40px 20px;
-    background-image: url(../images/nav-arrow-down.png);
+  display: table;
+  margin: 0 auto;
+  width: 40px;
+  height: 20px;
+  background-size: 40px 20px;
+  background-image: url(../images/nav-arrow-down.png);
 }
 
 .visible-landscape {
-    display: none;
+  display: none;
 }
 
 #overlay {
-    background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.55);
 }
 
 
 
 /************ MEDIA QUERIES *************/
 
-@media (max-width: 768px) {
-    .visible-xs {
-        display: table!important;
+@media only screen and (max-width : 320px) {
+
+  .content {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+
+    h1 {
+      font-size: 30px;
     }
 
-    body {
-        background: gray;
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 21px;
     }
 
-    .middle {
-        margin: 0;
+    table {
+      margin-top: 20px;
     }
+  }
 
-    .header a,.footer a {
-        margin: 0 0px;
-    }
+  .visible-xs {
+      display: table!important;
+  }
 
-    .header .bullet {
-        margin-left: 25px;
-        padding-left: 3px;
-    }
+  .social{
+    display: none!important;
+  }
 
-    .header,.footer {
-        padding: 15px 20px;
-    }
+  #background1, #background2, #background3, #background4{
+    background-position: 0px 0px;
+  }
 
-    .content {
-        width: 100%;
-        margin: auto;
-        left: 0;
-        padding-right: 50px;
-        padding-left: 20px;
-    }
+  .prev {
+      height: 1px;
+  }
 
-    .sidenav {
-        right: 20px;
-    }
+  .next {
+      height: 25px;
+  }
 
-    .content h1 {
-        font-size: 45px;
-    }
+  .footer {
+    display: none;
+    height: 10px;
+  }
 
-    .content span {
-        font-size: 16px;/*font-size: 24px;*/
-    }
+  #bouncy {
+    margin-bottom: 30px;
+  }
 
-    .wrapper {
-        top: 400px;
-    }
+  .wrapper .footer {
+    display: block;
+    height: auto;
+  }
 
-    .prev {
-        height: 30px;
-    }
+  .signup{
+    margin-top:5px;
+  }
+
+  .sidenav {
+    right: 25px;
+  }
 }
 
-@media (max-width: 768px) and (orientation : landscape) {
-    tr.hidden-xxs {
-        display: none!important;
+@media (min-width: 321px) and (max-width: 479px) {
+
+  .content {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+
+    h1 {
+      font-size: 30px;
     }
 
-    .hidden-xxs {
-        display: none!important;
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 21px;
     }
 
-    .visible-xs {
-        display: table!important;
+    table {
+      margin-top: 20px;
     }
+  }
 
-    .content {
-        padding-top: 75px;
-    }
+  .visible-xs {
+      display: table!important;
+  }
 
-    .content h1 {
-        font-size: 30px;
-    }
+  .social{
+    display: none!important;
+  }
 
-    .content span {
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 15px;
-    }
+  #background1, #background2, #background3, #background4{
+    background-position: 0px 0px;
+  }
 
-    .wrapper {
-        top: 300px;
-    }
+  .prev {
+      height: 1px;
+  }
 
-    .prev {
-        height: 1px;
-        display: none;
-    }
+  .next {
+      height: 25px;
+  }
 
-    .next {
-        height: 25px;
-    }
+  .footer {
+    display: none;
+    height: 10px;
+  }
 
-    .content table {
-        margin-top: 15px;
-    }
+  #bouncy {
+    margin-bottom: 30px;
+  }
 
-    .visible-landscape {
-        display: initial;
-    }
+  .wrapper .footer {
+    display: block;
+    height: auto;
+  }
 
-    .hidden-landscape {
-        display: none!important;
-    }
+  .signup{
+    margin-top:5px;
+  }
 
-    .footer {
-        display: none;
-        height: 10px;
-    }
-
-    #bouncy {
-        margin-bottom: 30px;
-    }
-
-    .wrapper .footer {
-      display: block;
-      height: auto;
-    }
+  .sidenav {
+    right: 25px;
+  }
 }
 
-@media (max-width: 420px) {
-    tr.hidden-xxs {
-        display: none!important;
+@media (min-width: 480px) and (max-width: 568px) and (orientation: landscape) {
+
+  .content {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+
+    h1 {
+      font-size: 30px;
     }
 
-    .hidden-xxs {
-        display: none!important;
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 21px;
     }
 
-    .visible-xs {
-        display: table!important;
+    table {
+      margin-top: 20px;
+    }
+  }
+
+  .visible-xs {
+      display: table!important;
+  }
+
+  .social{
+    display: none!important;
+  }
+
+  #background1, #background2, #background3, #background4{
+    background-position: 0px 0px;
+  }
+
+  .prev {
+      height: 1px;
+  }
+
+  .next {
+      height: 25px;
+  }
+
+  .footer {
+    display: none;
+    height: 10px;
+  }
+
+  #bouncy {
+    margin-bottom: 30px;
+  }
+
+  .wrapper .footer {
+    display: block;
+    height: auto;
+  }
+
+  .signup{
+    margin-top:5px;
+  }
+
+  .sidenav {
+    right: 25px;
+  }
+}
+
+@media (min-width: 569px) and (max-width: 767px) {
+
+  .content {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+
+    h1 {
+      font-size: 30px;
     }
 
-    .content h1 {
-        font-size: 30px;
+    span {
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 29px;
     }
 
-    #background1, #background2, #background3, #background4{
-      background-position: 0px 0px;
-    }
-
-    .content span {
-        font-size: 15px;
-        font-weight: 300;
-        line-height: 21px;
-    }
-
-    .prev {
-        height: 1px;
-    }
-
-    .next {
-        height: 25px;
-    }
-
-    .content table {
+    table {
         margin-top: 20px;
     }
+  }
 
-    .footer {
-      display: none;
-      height: 10px;
+  .visible-xs {
+      display: table!important;
+  }
+
+  #background1, #background2, #background3, #background4{
+    background-position: 0px 0px;
+  }
+
+  .prev {
+      height: 1px;
+  }
+
+  .next {
+      height: 25px;
+  }
+
+  .footer {
+    display: none;
+    height: 10px;
+  }
+
+  #bouncy {
+    margin-bottom: 30px;
+  }
+
+  .wrapper .footer {
+    display: block;
+    height: auto;
+  }
+
+  .sidenav {
+    right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 986px) {
+
+  .content {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+
+    h1 {
+      font-size: 35px;
     }
 
-    #bouncy {
-      margin-bottom: 30px;
+    span {
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 29px;
     }
 
-    .wrapper .footer {
-      display: block;
-      height: auto;
+    table {
+        margin-top: 20px;
     }
+  }
+
+  .prev {
+      height: 1px;
+  }
+
+  .next {
+      height: 25px;
+  }
+
+  .footer {
+    display: none;
+    height: 10px;
+  }
+
+  #bouncy {
+    margin-bottom: 30px;
+  }
+
+  .wrapper .footer {
+    display: block;
+    height: auto;
+  }
+
+  .sidenav {
+    right: 20px;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-}
-
-@media (min-width: 1200px) {
-}
+@media (min-width: 980px) and (max-width: 1280px) {}
