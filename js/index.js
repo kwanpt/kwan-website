@@ -229,7 +229,7 @@ $(document).ready(function() {
         if (currentPage == page) {
             return;
         }
-        if (page == 4) {
+        if (page == 5) {
             $('#overlay').animate({
                 'opacity': 0
             }, 450, function() {
