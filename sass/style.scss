@@ -11,7 +11,7 @@ body {
 
 ::selection {
   color: white;
-  background:#FE171F;
+  background:#FF4611;
 }
 
 .footer{
@@ -31,8 +31,8 @@ a {
 .signup {
   text-align: center;
   padding: 15px 20px;
-  background: #FE171F;
-  border: 1px solid #FE171F;
+  background: #FF4611;
+  border: 1px solid #FF4611;
   -webkit-transition: background 0.2s linear;
   -moz-transition: background 0.2s linear;
   transition: background 0.2s linear;
@@ -43,7 +43,7 @@ a {
 
   &:hover {
     background: transparent;
-    color: #FE171F;
+    color: #FF4611;
   }
 }
 
@@ -178,13 +178,13 @@ table,td,tr {
     &.redline {
       display: block;
       margin: 25px 0 0 0;
-      border: 1px solid #FE171F;
+      border: 1px solid #FF4611;
       width: 35px;
     }
 
     em {
       font-weight: 500;
-      color:#FE171F;
+      color:#FF4611;
       font-style: normal;
     }
   }
@@ -331,6 +331,124 @@ table,td,tr {
 
 
 
+/************ MODAL FORM *************/
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  font-family: 'Open Sans', sans-serif;
+
+  &:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+  .close {
+    color: #999;
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: none;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  ul{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    float:left;
+
+    li{
+      float:left;
+
+      &.buttons {
+        float:right;
+      }
+    }
+  }
+
+  label{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:500;
+    color:#666;
+    display: block;
+    margin:5px 0;
+  }
+
+  input{
+    background:#fff;
+    border:1px solid #ccc;
+    box-shadow: none;
+    padding: 5px 10px;
+    color: #666;
+    float: left;
+    width: 350px;
+    margin: 0;
+    -webkit-transition: border 0.2s linear;
+    -moz-transition: border 0.2s linear;
+    transition: border 0.2s linear;
+
+    &:focus {
+      box-shadow: none;
+      border:1px solid #FF4611;
+      outline: none;
+    }
+  }
+
+  input.submit{
+    text-align: center;
+    padding: 15px 20px;
+    background: #FF4611;
+    border: 1px solid #FF4611;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    width: 110px;
+    float: right;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:500;
+
+    &:hover {
+      background: transparent;
+      color: #FF4611;
+    }
+  }
+}
+
+.modalDialog > div {
+  width: 450px;
+  height: 350px;
+  position: relative;
+  margin: 10% auto;
+  padding: 100px 50px 10px 50px;
+  border-radius: 10px;
+  background: #fff;
+  border-radius: 0;
+  border-bottom: 6px solid #FF4611;
+  background-image: url(../images/kwan-logo-color.svg);
+  background-repeat: no-repeat;
+  background-position: center 30px;
+}
+
 /************ MEDIA QUERIES *************/
 
 @media only screen and (max-width : 320px) {
@@ -398,6 +516,31 @@ table,td,tr {
   .sidenav {
     right: 25px;
   }
+
+  /************ MODAL FORM *************/
+
+  .modalDialog {
+
+    label{
+      font-family: 'Open Sans', sans-serif;
+      font-weight:500;
+      color:#666;
+      display: block;
+      margin:5px 0;
+    }
+
+    input{
+      width: 260px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .modalDialog > div {
+    width: 300px;
+    height: 350px;
+    padding: 100px 20px 10px 20px;
+  }
+
 }
 
 @media (min-width: 321px) and (max-width: 479px) {
@@ -465,6 +608,32 @@ table,td,tr {
   .sidenav {
     right: 25px;
   }
+
+
+  /************ MODAL FORM *************/
+
+  .modalDialog {
+
+    label{
+      font-family: 'Open Sans', sans-serif;
+      font-weight:500;
+      color:#666;
+      display: block;
+      margin:5px 0;
+    }
+
+    input{
+      width: 260px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .modalDialog > div {
+    width: 300px;
+    height: 300px;
+    padding: 85px 20px 10px 20px;
+    margin: 2% auto;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 568px) and (orientation: landscape) {
@@ -531,6 +700,26 @@ table,td,tr {
 
   .sidenav {
     right: 25px;
+  }
+
+  /************ MODAL FORM *************/
+
+  .modalDialog {
+
+    label{
+      font-family: 'Open Sans', sans-serif;
+      font-weight:500;
+      color:#666;
+      display: block;
+      margin:5px 0;
+    }
+  }
+
+  .modalDialog > div {
+    height: 280px;
+    padding: 65px 50px 10px 50px;
+    margin: 4% auto;
+    background-size: 27%;
   }
 }
 
