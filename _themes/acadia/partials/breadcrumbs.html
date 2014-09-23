@@ -1,0 +1,14 @@
+{{ nav:exists from="{segment_1}" include_entries="true" folders_only="false" }}
+	{{ if segment_2 }}
+		{{ nav:breadcrumbs include_home="false" }}
+			{{ if first }}<div class="breadcrumbs">{{ endif }}
+			
+			{{ if url !== current_url }}
+				<a href="{{ url }}">{{ title }}</a>
+				<span>»</span>
+			{{ endif }}
+			
+			{{ if last }}</div>{{ endif }}
+		{{ /nav:breadcrumbs }}
+	{{ endif }}
+{{ /nav:exists }}

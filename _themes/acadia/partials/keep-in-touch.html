@@ -1,0 +1,13 @@
+{{#
+The `site_twitter` variable is set in Acadia's `theme.yaml` config file.	
+#}}
+
+<div class="blog-categories side-block {{ switch between="odd|even" }}">
+	<h2>Keep In Touch</h2>
+	<ul>
+		<li><a href="/blog/feed">Journal Feed</a></li>
+		{{ if site_twitter }}
+		<li><a href="http://twitter.com/{{ site_twitter }}">@{{ site_twitter }}</a></li>
+		{{ endif }}
+	</ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="eight columns">
+		<div class="article">
+			<h1>{{ title }}</h1>
+
+			{{ content|widont }}
+		</div>
+	</div>
+	<div class="four columns sidebar" role="complementary">
+		{{ theme:partial src="sub-navigation" }}		
+		{{ theme:partial src="common-sidebar" }}
+	</div>
+</div>
