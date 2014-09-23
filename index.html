@@ -3,9 +3,7 @@
 <html lang="en">
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>
-   KWAN - LOVE | RESPECT | COMMUNITY
-  </title>
+  <title>KWAN - LOVE, RESPECT & COMMUNITY</title>
 
   <!-- JAVASCRIPTS -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -35,7 +33,6 @@
   <div id="background2" class="background" style="opacity: 0;"></div>
   <div id="background3" class="background" style="opacity: 0;"></div>
   <div id="background4" class="background" style="opacity: 0;"></div>
-  <div id="background5" class="background" style="opacity: 0;"></div>
   <div id="overlay" class="background"></div>
   <div id="sensor"></div>
   <table id="content1" class="content">
@@ -119,9 +116,35 @@
        <tbody>
         <tr>
          <td>
-          <a href="https://kwan.com/register" class="signup">
+          <a href="#openModal" class="signup">
            STAY TUNED
           </a>
+          <div id="openModal" class="modalDialog">
+            <div class="modalContent">
+              <a href="#close" title="Close" class="close">X</a>
+              <form id="form53" name="form53" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://rupeal.wufoo.eu/forms/s2jwnna1hf41vt/#public">
+                <ul>
+                  <li id="foli17" class="notranslate">
+                    <label class="desc" id="title17" for="Field17">Name</label>
+                    <input id="Field17" name="Field17" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="" />
+                  </li>
+                  <li id="foli6" class="notranslate">
+                    <label class="desc" id="title6" for="Field6">Email</label>
+                    <input id="Field6" name="Field6" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="2" />
+                  </li>
+                    <li class="buttons ">
+                      <input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" />
+                  </li>
+                  <li class="hide">
+                    <label for="comment">Do Not Fill This Out</label>
+                    <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                  <input type="hidden" id="idstamp" name="idstamp" value="E+wCv8bOUYUCRJz54gfKJz1h2kzEluPDF4n4jg6KBjE=" />
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+
          </td>
         </tr>
        </tbody>
@@ -242,3 +265,9 @@
 
  </body>
 </html>
+
+<script>
+$(window).on('hashchange', function(e){
+    history.replaceState ("", document.title, e.originalEvent.oldURL);
+});
+</script>
