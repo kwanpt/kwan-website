@@ -1,6 +1,7 @@
 ---
 title: 'KWAN - Community, Love & Respect'
 _fieldset: page
+_template: homepage
 
 # PAGE 1 - ABOUT COMMUNITY
 page_1_title: 'We are all about community'
