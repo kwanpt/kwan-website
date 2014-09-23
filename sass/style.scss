@@ -156,12 +156,34 @@ table,td,tr {
   background-color: rgba(0,0,0,0);
   overflow: auto;
   margin: auto auto auto -450px;
-  ;left: 50%;
+  left: 50%;
   width: 900px;
   display: table;
   height: 100%;
   padding-top: 100px;
   padding-bottom: 88px;
+
+  &.thankyou{
+    text-align:center;
+    padding-top: 250px;
+
+    span.redline {
+      margin: 30px auto 0px auto;
+    }
+
+    .signup{
+      background: transparent;
+      color: #FF4611;
+      float: none;
+      display: inline-block;
+      margin-top: 50px;
+
+      &:hover{
+        color: #FFF;
+        border-color: #FFF;
+      }
+    }
+  }
 
   h1 {
     font-size: 45px;
@@ -301,6 +323,10 @@ table,td,tr {
 
   &#background4 {
     background-image: url(../images/bg4.jpg);
+  }
+
+  &#background5 {
+    background-image: url(../images/bg5.jpg);
   }
 }
 
@@ -668,7 +694,7 @@ table,td,tr {
     display: none!important;
   }
 
-  #background1, #background2, #background3, #background4{
+  #background1, #background2, #background3, #background4, #background5{
     background-position: 0px 0px;
   }
 

@@ -26,7 +26,7 @@ $(document).ready(function() {
     } else {
         $("#background1").css("background-image", "url(images/bg1.jpg)");
     }
-    
+
     preparePages();
     var videoStart = null;
     $(".fancybox").fancybox({
@@ -154,9 +154,6 @@ $(document).ready(function() {
         $('#background4').css({
             opacity: 0
         });
-        $('#background5').css({
-            opacity: 0
-        });
         $('#navtitle1').css({
             opacity: 1
         });
@@ -167,9 +164,6 @@ $(document).ready(function() {
             opacity: 0
         });
         $('#navtitle4').css({
-            opacity: 0
-        });
-        $('#navtitle5').css({
             opacity: 0
         });
         $('#content1').css({
@@ -188,10 +182,6 @@ $(document).ready(function() {
             opacity: 0
         });
         $('#content4').hide();
-        $('#content5').css({
-            opacity: 0
-        });
-        $('#content5').hide();
         $('.navitem1').addClass('selected');
         $('#sensor,.sidenav,.header,.footer,.content').bind('DOMMouseScroll mousewheel wheel', function(event) {
             wheelHandle(event);
