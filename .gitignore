@@ -12,6 +12,6 @@ Thumbs.db
 ######################
 _cache/*
 !_cache/index.html
-.sass-cache/
+.sass-cache/*
 _logs/*
 !_logs/index.html
