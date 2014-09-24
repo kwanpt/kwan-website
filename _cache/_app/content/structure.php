@@ -1,1 +1,0 @@
-a:1:{s:1:"/";a:9:{s:6:"parent";N;s:8:"is_entry";i:0;s:7:"is_page";i:1;s:9:"is_hidden";b:0;s:8:"is_draft";b:0;s:5:"depth";i:0;s:9:"order_key";s:1:"/";s:13:"sub_order_key";s:7:"page.md";s:4:"type";s:6:"folder";}}
