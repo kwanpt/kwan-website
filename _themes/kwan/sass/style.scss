@@ -18,7 +18,15 @@ body {
 }
 
 .footer{
-  height:30px;
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  color: #777;
+  font-size: 12px;
+
+  a{
+    color: $color-primary;
+  }
 }
 
 a {
@@ -499,6 +507,19 @@ table,td,tr {
 
 @media only screen and (max-width : 320px) {
 
+  #header {
+    padding: 25px 20px;
+
+    a{
+      margin:0;
+    }
+  }
+
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
   .content {
     width: 100%;
     margin: auto;
@@ -539,11 +560,6 @@ table,td,tr {
 
   .next {
       height: 25px;
-  }
-
-  .footer {
-    display: none;
-    height: 10px;
   }
 
   #bouncy {
@@ -591,6 +607,19 @@ table,td,tr {
 
 @media (min-width: 321px) and (max-width: 479px) {
 
+  #header {
+    padding: 25px 20px;
+
+    a{
+      margin:0;
+    }
+  }
+
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
   .content {
     width: 100%;
     margin: auto;
@@ -631,11 +660,6 @@ table,td,tr {
 
   .next {
       height: 25px;
-  }
-
-  .footer {
-    display: none;
-    height: 10px;
   }
 
   #bouncy {
@@ -684,6 +708,19 @@ table,td,tr {
 
 @media (min-width: 480px) and (max-width: 568px) and (orientation: landscape) {
 
+  #header {
+    padding: 25px 20px;
+
+    a{
+      margin:0;
+    }
+  }
+
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
   .content {
     width: 100%;
     margin: auto;
@@ -726,11 +763,6 @@ table,td,tr {
       height: 25px;
   }
 
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
   #bouncy {
     margin-bottom: 30px;
   }
@@ -771,6 +803,19 @@ table,td,tr {
 
 @media (min-width: 569px) and (max-width: 767px) {
 
+  #header {
+    padding: 25px 20px;
+
+    a{
+      margin:0;
+    }
+  }
+
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
   .content {
     width: 100%;
     margin: auto;
@@ -809,11 +854,6 @@ table,td,tr {
       height: 25px;
   }
 
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
   #bouncy {
     margin-bottom: 30px;
   }
@@ -829,6 +869,19 @@ table,td,tr {
 }
 
 @media (min-width: 768px) and (max-width: 986px) {
+
+  #header {
+    padding: 25px 20px;
+
+    a{
+      margin:0;
+    }
+  }
+
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
 
   .content {
     width: 100%;
@@ -858,11 +911,6 @@ table,td,tr {
 
   .next {
       height: 25px;
-  }
-
-  .footer {
-    display: none;
-    height: 10px;
   }
 
   #bouncy {

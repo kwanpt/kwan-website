@@ -18,21 +18,29 @@ body {
 
 /* line 20, ../sass/style.scss */
 .footer {
-  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  color: #777;
+  font-size: 12px;
+}
+/* line 27, ../sass/style.scss */
+.footer a {
+  color: #ff4611;
 }
 
-/* line 24, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
-/* line 28, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
 a:hover {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 34, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .signup {
   text-align: center;
   padding: 15px 20px;
@@ -46,19 +54,19 @@ a:hover {
   float: left;
   font-size: 16px;
 }
-/* line 47, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .signup:hover {
   background: transparent;
   color: #ff4611;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 td.zero {
   width: 1%;
   white-space: nowrap;
 }
 
-/* line 58, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 table, td, tr {
   padding: 0px;
   margin: 0px;
@@ -67,7 +75,7 @@ table, td, tr {
   border-collapse: separate;
 }
 
-/* line 66, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .logo {
   width: 155px;
   height: 55px;
@@ -75,7 +83,7 @@ table, td, tr {
   background-size: 155px 55px;
 }
 
-/* line 73, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 .header {
   background: rgba(255, 255, 255, 0);
   margin: 0px;
@@ -91,79 +99,79 @@ table, td, tr {
   display: block;
   pointer-events: initial;
 }
-/* line 88, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 .header td {
   vertical-align: middle;
 }
-/* line 92, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .header a {
   display: inline-block;
   margin: 0 10px;
   vertical-align: middle;
 }
-/* line 98, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 .header span {
   display: inline-block;
   margin: 0 10px;
   vertical-align: middle;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 .next {
   opacity: 0.6;
 }
-/* line 108, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 .next:hover {
   opacity: 1;
 }
 
-/* line 113, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 .prev {
   height: 45px;
 }
 
-/* line 118, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .middle a {
   margin: 0 16px;
   opacity: 0.8;
 }
-/* line 122, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .middle a:hover {
   opacity: 1;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .social {
   float: right;
 }
-/* line 130, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .social a {
   width: 51px;
   height: 51px;
   background: url(../img/socialKwan.svg);
 }
-/* line 135, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .social a:hover {
   opacity: 0.65;
 }
-/* line 139, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .social a#facebook {
   background-position: -52px 0;
 }
-/* line 143, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .social a#twitter {
   background-position: -157px 0;
 }
-/* line 147, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .social a#github {
   background-position: -105px 0;
 }
-/* line 151, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .social a#reddit {
   background-position: 0 0;
 }
 
-/* line 157, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .content {
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
@@ -176,16 +184,16 @@ table, td, tr {
   padding-top: 100px;
   padding-bottom: 88px;
 }
-/* line 169, ../sass/style.scss */
+/* line 177, ../sass/style.scss */
 .content.thankyou {
   text-align: center;
   padding-top: 250px;
 }
-/* line 173, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 .content.thankyou span.redline {
   margin: 30px auto 0px auto;
 }
-/* line 177, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 .content.thankyou .signup {
   background: transparent;
   color: #ff4611;
@@ -193,57 +201,57 @@ table, td, tr {
   display: inline-block;
   margin-top: 50px;
 }
-/* line 184, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 .content.thankyou .signup:hover {
   color: #FFF;
   border-color: #FFF;
 }
-/* line 191, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 .content h1 {
   font-size: 45px;
   font-weight: 500;
   letter-spacing: 0.5px;
   margin: 0 0 20px 0;
 }
-/* line 198, ../sass/style.scss */
+/* line 206, ../sass/style.scss */
 .content span {
   font-size: 20px;
   font-weight: 300;
   line-height: 30px;
 }
-/* line 205, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .content span.topics em {
   margin-top: 10px;
   display: block;
   line-height: 26px;
 }
-/* line 212, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 .content span.redline {
   display: block;
   margin: 25px 0 0 0;
   border: 1px solid #ff4611;
   width: 35px;
 }
-/* line 219, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 .content span em {
   font-weight: 500;
   color: #ff4611;
   font-style: normal;
 }
-/* line 226, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 .content table {
   margin-top: 32px;
 }
-/* line 230, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .content .innerLink {
   font-style: italic;
 }
-/* line 233, ../sass/style.scss */
+/* line 241, ../sass/style.scss */
 .content .innerLink:hover {
   color: #ff4611;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 .sidenav {
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
@@ -254,12 +262,12 @@ table, td, tr {
   right: 40px;
   height: 100%;
 }
-/* line 249, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 .sidenav span {
   margin-right: 10px;
 }
 
-/* line 254, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .line {
   height: 20px;
   width: 1px;
@@ -267,7 +275,7 @@ table, td, tr {
   margin: 0 auto;
 }
 
-/* line 261, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 .navitem {
   width: 10px;
   height: 10px;
@@ -283,28 +291,28 @@ table, td, tr {
   -o-border-radius: 17px;
   border-radius: 17px;
 }
-/* line 276, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 .navitem.selected {
   background: white;
   border: 1px solid white;
 }
-/* line 281, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .navitem:hover {
   background: white;
   border: 1px solid white;
 }
-/* line 286, ../sass/style.scss */
+/* line 294, ../sass/style.scss */
 .navitem img {
   display: table;
   margin: 0 auto;
 }
 
-/* line 294, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
 #navtitle1, #navtitle2, #navtitle3, #navtitle4, #navtitle5 {
   float: right;
 }
 
-/* line 298, ../sass/style.scss */
+/* line 306, ../sass/style.scss */
 #sensor {
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
@@ -314,7 +322,7 @@ table, td, tr {
   left: 0;
 }
 
-/* line 307, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 #blocker {
   position: absolute;
   background-color: transparent;
@@ -325,7 +333,7 @@ table, td, tr {
   left: 0px;
 }
 
-/* line 317, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 .background {
   position: absolute;
   background-color: black;
@@ -341,28 +349,28 @@ table, td, tr {
   background-position: center center;
   background-attachment: fixed;
 }
-/* line 332, ../sass/style.scss */
+/* line 340, ../sass/style.scss */
 .background#background1 {
   background-image: url(../img/bg1.jpg);
 }
-/* line 336, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 .background#background2 {
   background-image: url(../img/bg2.jpg);
 }
-/* line 340, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 .background#background3 {
   background-image: url(../img/bg3.jpg);
 }
-/* line 344, ../sass/style.scss */
+/* line 352, ../sass/style.scss */
 .background#background4 {
   background-image: url(../img/bg4.jpg);
 }
-/* line 348, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 .background#background5 {
   background-image: url(../img/bg5.jpg);
 }
 
-/* line 353, ../sass/style.scss */
+/* line 361, ../sass/style.scss */
 #bouncy {
   position: fixed;
   bottom: 0;
@@ -371,7 +379,7 @@ table, td, tr {
   margin: 0 auto 90px;
 }
 
-/* line 361, ../sass/style.scss */
+/* line 369, ../sass/style.scss */
 #bouncy a {
   display: table;
   margin: 0 auto;
@@ -381,18 +389,18 @@ table, td, tr {
   background-image: url(../img/nav-arrow-down.png);
 }
 
-/* line 370, ../sass/style.scss */
+/* line 378, ../sass/style.scss */
 .visible-landscape {
   display: none;
 }
 
-/* line 374, ../sass/style.scss */
+/* line 382, ../sass/style.scss */
 #overlay {
   background: rgba(0, 0, 0, 0.55);
 }
 
 /************ MODAL FORM *************/
-/* line 382, ../sass/style.scss */
+/* line 390, ../sass/style.scss */
 .modalDialog {
   position: fixed;
   top: 0;
@@ -408,12 +416,12 @@ table, td, tr {
   pointer-events: none;
   font-family: 'Open Sans', sans-serif;
 }
-/* line 397, ../sass/style.scss */
+/* line 405, ../sass/style.scss */
 .modalDialog:target {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 402, ../sass/style.scss */
+/* line 410, ../sass/style.scss */
 .modalDialog .close {
   color: #999;
   line-height: 25px;
@@ -422,26 +430,26 @@ table, td, tr {
   top: 10px;
   text-decoration: none;
 }
-/* line 410, ../sass/style.scss */
+/* line 418, ../sass/style.scss */
 .modalDialog .close:hover {
   color: #666;
 }
-/* line 415, ../sass/style.scss */
+/* line 423, ../sass/style.scss */
 .modalDialog ul {
   list-style: none;
   margin: 0;
   padding: 0;
   float: left;
 }
-/* line 421, ../sass/style.scss */
+/* line 429, ../sass/style.scss */
 .modalDialog ul li {
   float: left;
 }
-/* line 424, ../sass/style.scss */
+/* line 432, ../sass/style.scss */
 .modalDialog ul li.buttons {
   float: right;
 }
-/* line 430, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 .modalDialog label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
@@ -449,7 +457,7 @@ table, td, tr {
   display: block;
   margin: 5px 0;
 }
-/* line 438, ../sass/style.scss */
+/* line 446, ../sass/style.scss */
 .modalDialog input {
   background: #fff;
   border: 1px solid #ccc;
@@ -463,13 +471,13 @@ table, td, tr {
   -moz-transition: border 0.2s linear;
   transition: border 0.2s linear;
 }
-/* line 451, ../sass/style.scss */
+/* line 459, ../sass/style.scss */
 .modalDialog input:focus {
   box-shadow: none;
   border: 1px solid #ff4611;
   outline: none;
 }
-/* line 458, ../sass/style.scss */
+/* line 466, ../sass/style.scss */
 .modalDialog input.submit {
   text-align: center;
   padding: 15px 20px;
@@ -488,13 +496,13 @@ table, td, tr {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
 }
-/* line 476, ../sass/style.scss */
+/* line 484, ../sass/style.scss */
 .modalDialog input.submit:hover {
   background: transparent;
   color: #ff4611;
 }
 
-/* line 483, ../sass/style.scss */
+/* line 491, ../sass/style.scss */
 .modalDialog > div {
   width: 450px;
   height: 350px;
@@ -512,7 +520,22 @@ table, td, tr {
 
 /************ MEDIA QUERIES *************/
 @media only screen and (max-width: 320px) {
-  /* line 502, ../sass/style.scss */
+  /* line 510, ../sass/style.scss */
+  #header {
+    padding: 25px 20px;
+  }
+  /* line 513, ../sass/style.scss */
+  #header a {
+    margin: 0;
+  }
+
+  /* line 518, ../sass/style.scss */
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
+  /* line 523, ../sass/style.scss */
   .content {
     width: 100%;
     margin: auto;
@@ -520,75 +543,69 @@ table, td, tr {
     padding-right: 50px;
     padding-left: 20px;
   }
-  /* line 509, ../sass/style.scss */
+  /* line 530, ../sass/style.scss */
   .content h1 {
     font-size: 30px;
   }
-  /* line 513, ../sass/style.scss */
+  /* line 534, ../sass/style.scss */
   .content span {
     font-size: 15px;
     font-weight: 300;
     line-height: 21px;
   }
-  /* line 519, ../sass/style.scss */
+  /* line 540, ../sass/style.scss */
   .content table {
     margin-top: 20px;
   }
 
-  /* line 524, ../sass/style.scss */
+  /* line 545, ../sass/style.scss */
   .visible-xs {
     display: table!important;
   }
 
-  /* line 528, ../sass/style.scss */
+  /* line 549, ../sass/style.scss */
   .social {
     display: none!important;
   }
 
-  /* line 532, ../sass/style.scss */
+  /* line 553, ../sass/style.scss */
   #background1, #background2, #background3, #background4 {
     background-position: 0px 0px;
   }
 
-  /* line 536, ../sass/style.scss */
+  /* line 557, ../sass/style.scss */
   .prev {
     height: 1px;
   }
 
-  /* line 540, ../sass/style.scss */
+  /* line 561, ../sass/style.scss */
   .next {
     height: 25px;
   }
 
-  /* line 544, ../sass/style.scss */
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
-  /* line 549, ../sass/style.scss */
+  /* line 565, ../sass/style.scss */
   #bouncy {
     margin-bottom: 30px;
   }
 
-  /* line 553, ../sass/style.scss */
+  /* line 569, ../sass/style.scss */
   .wrapper .footer {
     display: block;
     height: auto;
   }
 
-  /* line 558, ../sass/style.scss */
+  /* line 574, ../sass/style.scss */
   .signup {
     margin-top: 5px;
   }
 
-  /* line 562, ../sass/style.scss */
+  /* line 578, ../sass/style.scss */
   .sidenav {
     right: 25px;
   }
 
   /************ MODAL FORM *************/
-  /* line 570, ../sass/style.scss */
+  /* line 586, ../sass/style.scss */
   .modalDialog label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
@@ -596,13 +613,13 @@ table, td, tr {
     display: block;
     margin: 5px 0;
   }
-  /* line 578, ../sass/style.scss */
+  /* line 594, ../sass/style.scss */
   .modalDialog input {
     width: 260px;
     margin-bottom: 5px;
   }
 
-  /* line 584, ../sass/style.scss */
+  /* line 600, ../sass/style.scss */
   .modalDialog > div {
     width: 300px;
     height: 350px;
@@ -610,7 +627,22 @@ table, td, tr {
   }
 }
 @media (min-width: 321px) and (max-width: 479px) {
-  /* line 594, ../sass/style.scss */
+  /* line 610, ../sass/style.scss */
+  #header {
+    padding: 25px 20px;
+  }
+  /* line 613, ../sass/style.scss */
+  #header a {
+    margin: 0;
+  }
+
+  /* line 618, ../sass/style.scss */
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
+  /* line 623, ../sass/style.scss */
   .content {
     width: 100%;
     margin: auto;
@@ -618,75 +650,69 @@ table, td, tr {
     padding-right: 50px;
     padding-left: 20px;
   }
-  /* line 601, ../sass/style.scss */
+  /* line 630, ../sass/style.scss */
   .content h1 {
     font-size: 30px;
   }
-  /* line 605, ../sass/style.scss */
+  /* line 634, ../sass/style.scss */
   .content span {
     font-size: 15px;
     font-weight: 300;
     line-height: 21px;
   }
-  /* line 611, ../sass/style.scss */
+  /* line 640, ../sass/style.scss */
   .content table {
     margin-top: 20px;
   }
 
-  /* line 616, ../sass/style.scss */
+  /* line 645, ../sass/style.scss */
   .visible-xs {
     display: table!important;
   }
 
-  /* line 620, ../sass/style.scss */
+  /* line 649, ../sass/style.scss */
   .social {
     display: none!important;
   }
 
-  /* line 624, ../sass/style.scss */
+  /* line 653, ../sass/style.scss */
   #background1, #background2, #background3, #background4 {
     background-position: 0px 0px;
   }
 
-  /* line 628, ../sass/style.scss */
+  /* line 657, ../sass/style.scss */
   .prev {
     height: 1px;
   }
 
-  /* line 632, ../sass/style.scss */
+  /* line 661, ../sass/style.scss */
   .next {
     height: 25px;
   }
 
-  /* line 636, ../sass/style.scss */
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
-  /* line 641, ../sass/style.scss */
+  /* line 665, ../sass/style.scss */
   #bouncy {
     margin-bottom: 30px;
   }
 
-  /* line 645, ../sass/style.scss */
+  /* line 669, ../sass/style.scss */
   .wrapper .footer {
     display: block;
     height: auto;
   }
 
-  /* line 650, ../sass/style.scss */
+  /* line 674, ../sass/style.scss */
   .signup {
     margin-top: 5px;
   }
 
-  /* line 654, ../sass/style.scss */
+  /* line 678, ../sass/style.scss */
   .sidenav {
     right: 25px;
   }
 
   /************ MODAL FORM *************/
-  /* line 663, ../sass/style.scss */
+  /* line 687, ../sass/style.scss */
   .modalDialog label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
@@ -694,13 +720,13 @@ table, td, tr {
     display: block;
     margin: 5px 0;
   }
-  /* line 671, ../sass/style.scss */
+  /* line 695, ../sass/style.scss */
   .modalDialog input {
     width: 260px;
     margin-bottom: 5px;
   }
 
-  /* line 677, ../sass/style.scss */
+  /* line 701, ../sass/style.scss */
   .modalDialog > div {
     width: 300px;
     height: 300px;
@@ -709,7 +735,22 @@ table, td, tr {
   }
 }
 @media (min-width: 480px) and (max-width: 568px) and (orientation: landscape) {
-  /* line 687, ../sass/style.scss */
+  /* line 711, ../sass/style.scss */
+  #header {
+    padding: 25px 20px;
+  }
+  /* line 714, ../sass/style.scss */
+  #header a {
+    margin: 0;
+  }
+
+  /* line 719, ../sass/style.scss */
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
+  /* line 724, ../sass/style.scss */
   .content {
     width: 100%;
     margin: auto;
@@ -717,75 +758,69 @@ table, td, tr {
     padding-right: 50px;
     padding-left: 20px;
   }
-  /* line 694, ../sass/style.scss */
+  /* line 731, ../sass/style.scss */
   .content h1 {
     font-size: 30px;
   }
-  /* line 698, ../sass/style.scss */
+  /* line 735, ../sass/style.scss */
   .content span {
     font-size: 15px;
     font-weight: 300;
     line-height: 21px;
   }
-  /* line 704, ../sass/style.scss */
+  /* line 741, ../sass/style.scss */
   .content table {
     margin-top: 20px;
   }
 
-  /* line 709, ../sass/style.scss */
+  /* line 746, ../sass/style.scss */
   .visible-xs {
     display: table!important;
   }
 
-  /* line 713, ../sass/style.scss */
+  /* line 750, ../sass/style.scss */
   .social {
     display: none!important;
   }
 
-  /* line 717, ../sass/style.scss */
+  /* line 754, ../sass/style.scss */
   #background1, #background2, #background3, #background4, #background5 {
     background-position: 0px 0px;
   }
 
-  /* line 721, ../sass/style.scss */
+  /* line 758, ../sass/style.scss */
   .prev {
     height: 1px;
   }
 
-  /* line 725, ../sass/style.scss */
+  /* line 762, ../sass/style.scss */
   .next {
     height: 25px;
   }
 
-  /* line 729, ../sass/style.scss */
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
-  /* line 734, ../sass/style.scss */
+  /* line 766, ../sass/style.scss */
   #bouncy {
     margin-bottom: 30px;
   }
 
-  /* line 738, ../sass/style.scss */
+  /* line 770, ../sass/style.scss */
   .wrapper .footer {
     display: block;
     height: auto;
   }
 
-  /* line 743, ../sass/style.scss */
+  /* line 775, ../sass/style.scss */
   .signup {
     margin-top: 5px;
   }
 
-  /* line 747, ../sass/style.scss */
+  /* line 779, ../sass/style.scss */
   .sidenav {
     right: 25px;
   }
 
   /************ MODAL FORM *************/
-  /* line 755, ../sass/style.scss */
+  /* line 787, ../sass/style.scss */
   .modalDialog label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
@@ -794,7 +829,7 @@ table, td, tr {
     margin: 5px 0;
   }
 
-  /* line 764, ../sass/style.scss */
+  /* line 796, ../sass/style.scss */
   .modalDialog > div {
     height: 280px;
     padding: 65px 50px 10px 50px;
@@ -803,7 +838,22 @@ table, td, tr {
   }
 }
 @media (min-width: 569px) and (max-width: 767px) {
-  /* line 774, ../sass/style.scss */
+  /* line 806, ../sass/style.scss */
+  #header {
+    padding: 25px 20px;
+  }
+  /* line 809, ../sass/style.scss */
+  #header a {
+    margin: 0;
+  }
+
+  /* line 814, ../sass/style.scss */
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
+  /* line 819, ../sass/style.scss */
   .content {
     width: 100%;
     margin: auto;
@@ -811,65 +861,74 @@ table, td, tr {
     padding-right: 50px;
     padding-left: 20px;
   }
-  /* line 781, ../sass/style.scss */
+  /* line 826, ../sass/style.scss */
   .content h1 {
     font-size: 30px;
   }
-  /* line 785, ../sass/style.scss */
+  /* line 830, ../sass/style.scss */
   .content span {
     font-size: 19px;
     font-weight: 300;
     line-height: 29px;
   }
-  /* line 791, ../sass/style.scss */
+  /* line 836, ../sass/style.scss */
   .content table {
     margin-top: 20px;
   }
 
-  /* line 796, ../sass/style.scss */
+  /* line 841, ../sass/style.scss */
   .visible-xs {
     display: table!important;
   }
 
-  /* line 800, ../sass/style.scss */
+  /* line 845, ../sass/style.scss */
   #background1, #background2, #background3, #background4 {
     background-position: 0px 0px;
   }
 
-  /* line 804, ../sass/style.scss */
+  /* line 849, ../sass/style.scss */
   .prev {
     height: 1px;
   }
 
-  /* line 808, ../sass/style.scss */
+  /* line 853, ../sass/style.scss */
   .next {
     height: 25px;
   }
 
-  /* line 812, ../sass/style.scss */
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
-  /* line 817, ../sass/style.scss */
+  /* line 857, ../sass/style.scss */
   #bouncy {
     margin-bottom: 30px;
   }
 
-  /* line 821, ../sass/style.scss */
+  /* line 861, ../sass/style.scss */
   .wrapper .footer {
     display: block;
     height: auto;
   }
 
-  /* line 826, ../sass/style.scss */
+  /* line 866, ../sass/style.scss */
   .sidenav {
     right: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 986px) {
-  /* line 833, ../sass/style.scss */
+  /* line 873, ../sass/style.scss */
+  #header {
+    padding: 25px 20px;
+  }
+  /* line 876, ../sass/style.scss */
+  #header a {
+    margin: 0;
+  }
+
+  /* line 881, ../sass/style.scss */
+  .footer {
+    left: 20px;
+    font-size: 11px;
+  }
+
+  /* line 886, ../sass/style.scss */
   .content {
     width: 100%;
     margin: auto;
@@ -877,49 +936,43 @@ table, td, tr {
     padding-right: 50px;
     padding-left: 20px;
   }
-  /* line 840, ../sass/style.scss */
+  /* line 893, ../sass/style.scss */
   .content h1 {
     font-size: 35px;
   }
-  /* line 844, ../sass/style.scss */
+  /* line 897, ../sass/style.scss */
   .content span {
     font-size: 19px;
     font-weight: 300;
     line-height: 29px;
   }
-  /* line 850, ../sass/style.scss */
+  /* line 903, ../sass/style.scss */
   .content table {
     margin-top: 20px;
   }
 
-  /* line 855, ../sass/style.scss */
+  /* line 908, ../sass/style.scss */
   .prev {
     height: 1px;
   }
 
-  /* line 859, ../sass/style.scss */
+  /* line 912, ../sass/style.scss */
   .next {
     height: 25px;
   }
 
-  /* line 863, ../sass/style.scss */
-  .footer {
-    display: none;
-    height: 10px;
-  }
-
-  /* line 868, ../sass/style.scss */
+  /* line 916, ../sass/style.scss */
   #bouncy {
     margin-bottom: 30px;
   }
 
-  /* line 872, ../sass/style.scss */
+  /* line 920, ../sass/style.scss */
   .wrapper .footer {
     display: block;
     height: auto;
   }
 
-  /* line 877, ../sass/style.scss */
+  /* line 925, ../sass/style.scss */
   .sidenav {
     right: 20px;
   }
