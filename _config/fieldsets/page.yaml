@@ -1,0 +1,17 @@
+title: Standard Page
+
+fields:
+  _template:
+    display: Template
+    type: templates
+
+  upload:
+    type: file
+    destination: assets/img/blog/
+
+  content:
+    display: Page Content
+    required: false
+    default:
+    type: markitup
+

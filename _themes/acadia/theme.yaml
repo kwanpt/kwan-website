@@ -1,0 +1,14 @@
+theme_name: Acadia
+
+favorite_sites:
+  -
+    name: National Park Service
+    url: http://www.nps.gov/
+  -
+    name: L.L.Bean
+    url: http://llbean.com
+  -
+    name: Statamic
+    url: http://statamic.com
+    
+site_twitter: statamic

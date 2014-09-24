@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="eight columns">
+		<div class="article">
+			<h1>Regarding <em>{{ taxonomy_name|title }}</em></h1>
+
+			<div class="taxonomy-results">
+				{{ entries:listing folder="blog" limit="4" taxonomy="true" }}
+					{{ if no_results }}
+						<p class="sorry">
+							Nothing found for {{ taxonomy_name }}.
+						</p>
+					{{ else }}
+						{{ theme:partial src="blog-listing" use_context="true" }}
+					{{ endif }}
+				{{ /entries:listing }}
+			</div>
+		</div>
+	</div>
+	<div class="four columns sidebar" role="complementary">
+		{{ theme:partial src="sub-navigation" }}		
+		{{ theme:partial src="common-sidebar" }}
+	</div>
+</div>

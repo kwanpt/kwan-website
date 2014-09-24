@@ -1,0 +1,18 @@
+{{ if segment_1 !== "blog" }}
+	{{ nav:exists from="/{segment_1}" max_depth="4" folders_only="false" }}
+		<div class="sub-nav">
+			<ul>
+				{{ nav from="/{segment_1}" max_depth="4" folders_only="false" }}
+					<li>
+						<a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ endif }}>{{ title|smartypants|widont }}</a>
+						{{ if is_current || is_parent }}
+							{{ if children }}
+								<ul>{{ *recursive children* }}</ul>
+							{{ endif }}
+						{{ endif }}
+					</li>
+				{{ /nav }}
+			</ul>
+		</div>
+	{{ /nav:exists }}
+{{ endif }}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+		
+		<title>
+			{{ _site_name }}
+			{{ if segment_1 }}
+			– {{ title }}
+			{{ endif }}
+		</title>
+
+		<!-- styles -->
+		{{ theme:css src="arrange" tag="true" }}
+		{{ theme:css tag="true" }}
+
+		<!-- favicon -->
+		<link rel="shortcut icon" type="image/png" href="{{ theme:img src="favicon.png" }}">
+	</head>
+	<body id="top">
+		<div class="page">
+			<div class="header" role="banner">
+				<h1><a href="{{ homepage }}">{{ _site_name|widont }}</a></h1>
+			</div>
+			
+			<div class="torso">
+				<div class="nav">
+					<div class="large-screen" role="navigation">
+						{{ nav from="/" }}<a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ endif }}>{{ title }}</a>{{ /nav }}
+					</div>
+					<div class="small-screen">
+						<a href="#nav">☰ Menu</a>
+					</div>
+				</div>
+				
+				<div class="main" role="main">
+					{{ layout_content }}
+				</div>
+			</div>
+			
+			<div class="small-screen-nav" id="nav">
+				<h3>Navigation</h3>
+				<a href="/">Home</a>
+				{{ nav from="/" }}<a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ endif }}>{{ title }}</a>{{ /nav }}
+				<a href="#top">Back to the Top</a>
+			</div>
+			
+			<div class="footer" role="contentinfo">
+				<p>
+					The <em>{{ theme_name }}</em> Theme <span class="delimiter">·</span> Powered by <a href="http://statamic.com">Statamic</a>
+				</p>
+			</div>
+		</div>
+
+		{{ location:start_maps smart_include="true" }}
+	</body>
+</html>

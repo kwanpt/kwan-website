@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="eight columns">
+		<div class="article">
+			<h1>{{ title }}</h1>
+			
+			<div class="big-map">
+				{{ location:map_listing folder="camp-spots" locate_with="where" }}
+					<h3><a href="{{url}}">{{ title }}</a></h3>
+					<p>{{ comment }}</p>
+				{{ /location:map_listing }}
+			</div>
+			
+			{{ entries:listing folder="camp-spots" sort_dir="asc" }}
+				{{ if first }}
+					<h2>Where We’ve Camped</h2>
+					<ul>
+				{{ endif }}
+						
+				<li><a href="{{ url }}">{{ title }}</a></li>
+						
+				{{ if last }}
+					</ul>
+				{{ endif }}
+			{{ /entries:listing }}
+		</div>
+	</div>
+	<div class="four columns sidebar" role="complementary">
+		{{ theme:partial src="sub-navigation" }}
+		{{ theme:partial src="common-sidebar" }}
+	</div>
+</div>

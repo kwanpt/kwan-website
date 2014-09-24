@@ -1,0 +1,28 @@
+{{ entries:listing folder="calendar" show_future="true" show_past="false" limit="2" sort_dir="asc" paginate="false" }}
+	{{ if no_results }}
+		<div class="calendar side-block {{ switch between="odd|even" }}">
+			<h2><a href="/calendar">Upcoming Events</a></h2>
+
+			<p class="sorry">
+				Nothing coming up.<br>
+				Check back soon.
+			</p>
+		</div>
+	{{ else }}
+		{{ if first }}
+			<div class="calendar side-block {{ switch between="odd|even" }}">
+				<h2><a href="/calendar">Upcoming Events</a></h2>
+				<ul>
+		{{ endif }}
+	
+		<li>
+			<small>{{ date }}</small>
+			<h3>{{ title }}</h3>
+		</li>
+	
+		{{ if last }}
+				</ul>
+			</div>
+		{{ endif }}
+	{{ endif }}
+{{ /entries:listing }}

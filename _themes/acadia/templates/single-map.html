@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="eight columns">
+		<div class="article">
+			{{ theme:partial src="breadcrumbs" }}
+
+			<h1>{{ title }}</h1>
+
+			<div class="figure">
+				{{ location:map_url locate_with="where" open_popup="true" }}
+					{{ if no_results }}
+						No results, sorry.
+					{{ else }}
+						<h2>{{ title }}</h2>
+					{{ endif }}
+				{{ /location:map_url }}
+				
+				<p>
+					Camp coordinates: {{ where:latitude|round:3 }}, {{ where:longitude|round:3 }}
+				</p>
+			</div>
+			
+			{{ content|widont }}
+
+			<div class="pagination">
+				{{ entries:previous folder="camp-spots" wrap="true" sort_dir="asc" }}
+					{{ if !no_results }}
+						<a href="{{ url }}" class="older">
+							<small>Previously</small><br>
+							{{ title|widont }}
+						</a>
+					{{ endif }}
+				{{ /entries:previous }}
+
+				{{ entries:next folder="camp-spots" wrap="true" sort_dir="asc" }}
+					{{ if !no_results }}
+						<a href="{{ url }}" class="newer">
+							<small>Next Up</small><br>
+							{{ title|widont }}
+						</a>
+					{{ endif }}
+				{{ /entries:next }}
+			</div>
+		</div>
+	</div>
+	<div class="four columns sidebar" role="complementary">
+		{{ theme:partial src="common-sidebar" }}
+	</div>
+</div>

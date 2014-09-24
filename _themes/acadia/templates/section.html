@@ -1,0 +1,60 @@
+<div class="row">
+	<div class="eight columns">
+		<div class="article">
+			{{ theme:partial src="breadcrumbs" }}
+			<h1>{{ title }}</h1>
+
+			{{ content|widont }}
+			
+			<hr>
+			
+			<ol class="tree roman">
+				{{ nav max_depth="5" from="{current_url}" folders_only="false" }}
+					<li>
+						<a href="{{ url }}">{{ title|smartypants|widont }}</a>
+						{{ if children }}
+						<ol>
+							{{ *recursive children* }}
+						</ol>
+						{{ endif }}
+					</li>
+				{{ /nav }}
+			</ol>
+
+				
+			{{ pages:previous }}
+				{{ unless no_results }}
+					<div class="pagination">
+						<a href="{{ url }}" class="older">
+							<small>Previously</small><br>
+							{{ title|widont }}
+						</a>
+						
+					{{ if !has_next }}
+						</div>
+					{{ endif }}
+				{{ endif }}
+						
+			{{ /pages:previous }}
+			
+			{{ pages:next }}
+				{{ unless no_results }}
+					{{ if !has_previous }}
+						<div class="pagination">
+					{{ endif }}
+						
+					<a href="{{ url }}" class="newer">
+						<small>Next Up</small><br>
+						{{ title|widont }}
+					</a>
+					
+					</div>
+				{{ endif }}
+			{{ /pages:next }}
+		</div>
+	</div>
+	<div class="four columns sidebar" role="complementary">
+		{{ theme:partial src="sub-navigation" }}		
+		{{ theme:partial src="common-sidebar" }}
+	</div>
+</div>
