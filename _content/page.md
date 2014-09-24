@@ -19,7 +19,7 @@ page_2_text_mobile: 'We've been watching companies exploring the good will of so
 page_3_title: But... KWAN? What the frak is KWAN?
 page_3_title_mobile: What is KWAN?
 
-page_3_text_big: 'Well, better than taking our word for it, we invite you to one of our meetups or (un)career coaching sessions to really feel the KWAN. Ok... legally speaking we are a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & Community.</em> That's it... More than a company, a community!'
+page_3_text_big: 'Well, better than taking our word for it, we invite you to one of our meetups or (un)career sessions to really feel the KWAN. Ok... legally speaking we are a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & Community.</em> That's it... More than a company, a community!'
 page_3_text_mobile: 'It's hard to explain and you'll need to have meet us to really feel the KWAN. Ok... legally speaking we are a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & Community.</em>'
 
 
@@ -27,8 +27,8 @@ page_4_title: Why would I want to Stay Tuned?
 page_4_title_mobile: Stay Tuned!
 
 
-page_4_text_big: '<em>(Un)Career Coaching:</em>That's right we'll detoxify your mind from the need of a career and point towards Professional ZEN.<br><em>Main Tech Meet ups:</em>We have some <a class="innerLink" href="http://www.mergelisbon.com/" target="_blank">meetups</a> and workshops are being planned. But there's more: want to host your own? need help with your community? We'll do our best to help you get it up and running.<br><em>Coming soon:</em>We're working on more stuff for you, but most is still in early alpha.'
-page_4_text_mobile: '<em>(Un)Career Coaching: </em> Detoxify towards Professional ZEN<br><em>Main Tech Meet ups: </em> We'll support every event that matters<br><em>Coming soon: </em>We're working on more stuff still in early alpha.'
+page_4_text_big: '<em>(Un) Career Sessions:</em>That's right we'll detoxify your mind from the need of a career and point towards Professional ZEN.<br><em>Tech Meet ups:</em>We have some <a class="innerLink" href="http://www.mergelisbon.com/" target="_blank">meetups</a> and workshops are being planned. But there's more: Want to host your own? Need help with your community? We'll do our best to help you get it up and running.<br><em>Coming soon:</em>We're working on more stuff for you, but most is still in early alpha.'
+page_4_text_mobile: '<em>(Un) Career Sessions: </em> Detoxify towards Professional ZEN<br><em>Tech Meet ups: </em> We'll support every event that matters<br><em>Coming soon: </em>We're working on more stuff still in early alpha.'
 
 callforaction: STAY TUNED
 ---
