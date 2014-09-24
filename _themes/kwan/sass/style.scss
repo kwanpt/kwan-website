@@ -200,6 +200,15 @@ table,td,tr {
     font-weight: 300;
     line-height: 30px;
 
+    &.topics{
+
+      em {
+        margin-top:10px;
+        display: block;
+        line-height: 26px;
+      }
+    }
+
     &.redline {
       display: block;
       margin: 25px 0 0 0;
@@ -220,10 +229,9 @@ table,td,tr {
 
   .innerLink{
     font-style: italic;
-    color: $color-primary;
 
     &:hover{
-      color: #FFFFFF;
+      color: $color-primary;
     }
   }
 }
