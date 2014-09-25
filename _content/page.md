@@ -19,7 +19,7 @@ page_2_text_mobile: 'We've been watching companies exploring the good will of so
 page_3_title: But... KWAN? What the frak is KWAN?
 page_3_title_mobile: What is KWAN?
 
-page_3_text_big: 'Well, better than taking our word for it, we invite you to one of our meetups or (un)career sessions to really feel the KWAN. Ok... legally speaking we're a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & Community.</em> That's it... More than a company, a community!'
+page_3_text_big: 'Well, better than taking our word for it, we invite you to one of our meetups or (un)career sessions to really feel the KWAN. Ok... legally speaking we're a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & COMMUNITY.</em> That's it... More than a company, a community!'
 page_3_text_mobile: 'It's hard to explain and you'll need to have meet us to really feel the KWAN. Ok... legally speaking we are a staffing company, and yes we may even have some projects to tell you about. But our ultimate goal is to develop IT Talents through <em>LOVE, RESPECT & Community.</em>'
 
 
