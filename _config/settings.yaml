@@ -116,6 +116,7 @@ _environments:
 
 # Set to 'true' if you want to log system messages
 _log_enabled: false
+_display_debug_panel: false
 
 # What's the least-serious level of message you wish to record to the log?
 # Your available options:
