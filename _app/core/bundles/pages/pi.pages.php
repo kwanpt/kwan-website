@@ -90,9 +90,6 @@ class Plugin_pages extends Plugin
         // grab content set based on the common parameters
         $content_set = $this->getContentSet($settings);
 
-        // grab total entries for setting later
-        $total_entries = $content_set->count();
-
         // limit
         $limit     = $this->fetchParam('limit', null, 'is_numeric');
         $offset    = $this->fetchParam('offset', 0, 'is_numeric');
@@ -107,9 +104,6 @@ class Plugin_pages extends Plugin
                 $content_set->limit($limit, $offset);
             }
         }
-
-        // manually supplement
-        $content_set->supplement(array('total_found' => $total_entries));
 
         // check for results
         if (!$content_set->count()) {
@@ -332,7 +326,14 @@ class Plugin_pages extends Plugin
             'show_past'   => $this->fetchParam('show_past', true, null, true),
             'show_future' => $this->fetchParam('show_future', false, null, true),
             'type'        => 'pages',
-            'conditions'  => trim($this->fetchParam('conditions', null, false, false, false))
+            'conditions'  => trim($this->fetchParam('conditions', null, false, false, false)),
+            'where'       => trim($this->fetchParam('where', null, false, false, false))
+        );
+
+        // determine supplemental data
+        $supplements = array(
+            'locate_with' => $this->fetchParam('locate_with', null, false, false, false),
+            'center_point' => $this->fetchParam('center_point', null, false, false, false)
         );
 
         // determine other factors
@@ -341,8 +342,9 @@ class Plugin_pages extends Plugin
             'sort_by'       => $this->fetchParam('sort_by', 'order_key'),
             'sort_dir'      => $this->fetchParam('sort_dir')
         );
+        $other['sort'] = $this->fetchParam('sort', $other['sort_by'] . ' ' . $other['sort_dir'], null, false, null);
 
-        return $other + $filters + $folders;
+        return $other + $supplements + $filters + $folders;
     }
 
 
@@ -363,11 +365,10 @@ class Plugin_pages extends Plugin
         } else {
             // no blink content exists, get data the hard way
             if ($settings['taxonomy']) {
-                $taxonomy_parts  = Taxonomy::getCriteria(URL::getCurrent());
-                $taxonomy_type   = $taxonomy_parts[0];
-                $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy_parts[1]) : urldecode($taxonomy_parts[1]);
+                $taxonomy  = Taxonomy::getCriteria(URL::getCurrent());
+                $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy['slug']) : urldecode($taxonomy['slug']);
 
-                $content_set = ContentService::getContentByTaxonomyValue($taxonomy_type, $taxonomy_slug, $settings['folders']);
+                $content_set = ContentService::getContentByTaxonomyValue($taxonomy['type'], $taxonomy_slug, $settings['folders']);
             } else {
                 $content_set = ContentService::getContentByFolders($settings['folders']);
             }
@@ -375,8 +376,14 @@ class Plugin_pages extends Plugin
             // filter
             $content_set->filter($settings);
 
+            // grab total entries for setting later
+            $total_entries = $content_set->count();
+
+            // pre-sort supplement
+            $content_set->supplement(array('total_found' => $total_entries) + $settings);
+
             // sort
-            $content_set->sort($settings['sort_by'], $settings['sort_dir']);
+            $content_set->multisort($settings['sort']);
 
             // store content as blink content for future use
             $this->blink->set($content_hash, $content_set->extract());

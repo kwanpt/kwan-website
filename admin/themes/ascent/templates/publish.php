@@ -8,6 +8,7 @@
         <span class="folder"><?php echo $identifier ?></span>
       </div>
       <ul>
+        <?php echo Hook::run('control_panel', 'add_to_status_bar', 'cumulative', null, $path); ?>
         <li>
           <?php print Fieldtype::render_fieldtype('status', 'status', array('display' => 'status'), $status, tabindex());?>
         </li>
@@ -21,6 +22,11 @@
     </div>
 
     <div class="section content">
+        <?php
+        
+        print Hook::run('control_panel', 'add_to_publish_form_header', 'cumulative');
+        
+        ?>
 
       <?php print Hook::run('control_panel', 'add_to_publish_form', 'cumulative') ?>
 
@@ -31,6 +37,7 @@
       <input type="hidden" name="page[original_datestamp]" value="<?php print $original_datestamp ?>" />
       <input type="hidden" name="page[original_timestamp]" value="<?php print $original_timestamp ?>" />
       <input type="hidden" name="page[original_numeric]" value="<?php print $original_numeric ?>" />
+      <input type="hidden" name="return" value="<?php print $return ?>" />
 
       <?php if (isset($new)): ?>
         <input type="hidden" name="page[new]" value="1" />
@@ -115,14 +122,14 @@
         <?php if ($slug !== '/'): ?>
         <div class="input-block input-text required<?php if (array_get($fields, 'slug:hide', false) === true):?> hidden<?php endif ?>">
           <label for="publish-slug"><?php echo Localization::fetch('slug') ?></label>
-          <input type="text" id="publish-slug" data-required="true" tabindex="<?php print tabindex(); ?>" class="text<?php if (isset($new)): ?> auto-slug <?php endif ?>" name="page[meta][slug]" value="<?php print $slug ?>" />
+          <input type="text" id="publish-slug" data-required="true" tabindex="<?php print tabindex(); ?>" class="text<?php if (isset($new)): ?> new-slug <?php endif ?>" name="page[meta][slug]" value="<?php print $slug ?>" />
         </div>
         <?php else: ?>
           <input type="hidden" id="publish-slug" tabindex="<?php print tabindex(); ?>" name="page[meta][slug]" value="<?php print $slug ?>" />
         <?php endif ?>
 
         <?php if ($type == 'date'): ?>
-        <div class="input-block input-date date required" data-value="<?php print date("Y-m-d", $datestamp) ?>">
+        <div class="input-block input-date date required<?php if (array_get($fields, 'date:hide', false) === true):?> hidden<?php endif ?>" data-value="<?php print date("Y-m-d", $datestamp) ?>">
           <label><?php echo Localization::fetch('publish_date') ?></label>
           <div class="field">
             <span class="ss-icon">calendar</span>
@@ -131,7 +138,7 @@
         </div>
 
         <?php if (Config::getEntryTimestamps()) { ?>
-        <div class="input-block input-time time required bootstrap-timepicker" data-date="<?php print date("h:i a", $timestamp) ?>" data-date-format="h:i a">
+        <div class="input-block input-time time required bootstrap-timepicker<?php if (array_get($fields, 'time:hide', false) === true):?> hidden<?php endif ?>" data-date="<?php print date("h:i a", $timestamp) ?>" data-date-format="h:i a">
           <label><?php echo Localization::fetch('publish_time') ?></label>
           <div class="field">
             <span class="ss-icon">clock</span>
@@ -141,7 +148,7 @@
         <?php } ?>
 
         <?php elseif ($type == 'number'): ?>
-        <div class="input-block input-text input-number" id="publish-order-number">
+        <div class="input-block input-text input-number<?php if (array_get($fields, 'order:hide', false) === true):?> hidden<?php endif ?>" id="publish-order-number">
           <label for="publish-order-number"><?php echo Localization::fetch('order_number') ?></label>
           <input name="page[meta][publish-numeric]" type="text" class="text date input-4char"  tabindex="<?php print tabindex(); ?>" maxlength="4" id="publish-order-number" value="<?php print $numeric; ?>" />
         </div>
@@ -200,7 +207,8 @@
     </div>
 
     <div id="publish-action" class="footer-controls push-down">
-      <input type="submit" class="btn" value="<?php echo Localization::fetch('save_publish') ?>" id="publish-submit">
+      <button type="submit" class="btn" id="publish-submit"><?php echo Localization::fetch('save_publish') ?></button>
+      <button type="submit" class="btn" id="publish-continue-submit" name="continue" value="true"><?php echo Localization::fetch('save_publish_continue') ?></button>
     </div>
 
   </form>

@@ -8,7 +8,7 @@
  * @author  Fred LeBlanc <fred@statamic.com>
  *
  * @copyright  2012-2014
- * @link       http://statamic.com/docs/core-template-tags/entries
+ * @link       http://statamic.com/learn/documentation/tags/entries
  * @license    http://statamic.com/license-agreement
  */
 class Plugin_entries extends Plugin
@@ -57,7 +57,16 @@ class Plugin_entries extends Plugin
         // total them up
         $total = 0;
         foreach ($content_set->get(false, false) as $content) {
-            if (!isset($content[$field]) || !is_numeric($content[$field])) {
+            if (!isset($content[$field])) {
+                continue;
+            }
+
+            // contains a comma? *might* be a number... strip them out.
+            if (strpos($content[$field], ',')) {
+                $content[$field] = str_replace(',', '', $content[$field]);
+            }
+
+            if (!is_numeric($content[$field])) {
                 continue;
             }
             
@@ -89,9 +98,6 @@ class Plugin_entries extends Plugin
         // grab content set based on the common parameters
         $content_set = $this->getContentSet($settings);
 
-        // grab total entries for setting later
-        $total_entries = $content_set->count();
-
         // limit
         $limit     = $this->fetchParam('limit', null, 'is_numeric');
         $offset    = $this->fetchParam('offset', 0, 'is_numeric');
@@ -106,12 +112,6 @@ class Plugin_entries extends Plugin
                 $content_set->limit($limit, $offset);
             }
         }
-        
-        // manually supplement
-        $content_set->supplement(array(
-            'total_found'    => $total_entries,
-            'group_by_date'  => $this->fetchParam("group_by_date", null, null, false, false)
-        ));
 
         // check for results
         if (!$content_set->count()) {
@@ -348,11 +348,10 @@ class Plugin_entries extends Plugin
         $folders = $this->fetchParam('folder', ltrim($this->fetchParam('from', URL::getCurrent()), "/"));
 
         if ($this->fetchParam('taxonomy', false, null, true, null)) {
-            $taxonomy_parts  = Taxonomy::getCriteria(URL::getCurrent());
-            $taxonomy_type   = $taxonomy_parts[0];
-            $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy_parts[1]) : urldecode($taxonomy_parts[1]);
+            $taxonomy  = Taxonomy::getCriteria(URL::getCurrent());
+            $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy['slug']) : urldecode($taxonomy['slug']);
 
-            $content_set = ContentService::getContentByTaxonomyValue($taxonomy_type, $taxonomy_slug, $folders);
+            $content_set = ContentService::getContentByTaxonomyValue($taxonomy['type'], $taxonomy_slug, $folders);
         } else {
             $content_set = ContentService::getContentByFolders($folders);
         }
@@ -484,19 +483,33 @@ class Plugin_entries extends Plugin
      */
     private function parseCommonParameters()
     {
+        $current_folder = URL::getCurrent();
+        
+        // Strip taxonomy segments because they don't reflect physical folder locations
+        if (Taxonomy::isTaxonomyUrl($current_folder)) {
+            $current_folder = URL::stripTaxonomy($current_folder);
+        }
+        
         // determine folder
-        $folders = array('folders' => $this->fetchParam('folder', $this->fetchParam('folders', ltrim($this->fetchParam('from', URL::getCurrent()), "/"))));
+        $folders = array('folders' => $this->fetchParam(array('folder', 'folders', 'from'), $current_folder));
 
         // determine filters
         $filters = array(
-            'show_hidden' => $this->fetchParam('show_hidden', false, null, true, false),
-            'show_drafts' => $this->fetchParam('show_drafts', false, null, true, false),
-            'since'       => $this->fetchParam('since'),
-            'until'       => $this->fetchParam('until'),
-            'show_past'   => $this->fetchParam('show_past', true, null, true),
-            'show_future' => $this->fetchParam('show_future', false, null, true),
-            'type'        => 'entries',
-            'conditions'  => trim($this->fetchParam('conditions', null, false, false, false))
+            'show_hidden'   => $this->fetchParam('show_hidden', false, null, true, false),
+            'show_drafts'   => $this->fetchParam('show_drafts', false, null, true, false),
+            'since'         => $this->fetchParam('since'),
+            'until'         => $this->fetchParam('until'),
+            'show_past'     => $this->fetchParam('show_past', true, null, true),
+            'show_future'   => $this->fetchParam('show_future', false, null, true),
+            'type'          => 'entries',
+            'conditions'    => trim($this->fetchParam('conditions', null, false, false, false)),
+            'where'         => trim($this->fetchParam('where', null, false, false, false))
+        );
+        
+        // determine supplemental data
+        $supplements = array(
+            'locate_with' => $this->fetchParam('locate_with', null, false, false, false),
+            'center_point' => $this->fetchParam('center_point', null, false, false, false)
         );
 
         // determine other factors
@@ -505,8 +518,9 @@ class Plugin_entries extends Plugin
             'sort_by'       => $this->fetchParam('sort_by', 'order_key'),
             'sort_dir'      => $this->fetchParam('sort_dir')
         );
+        $other['sort'] = $this->fetchParam('sort', $other['sort_by'] . ' ' . $other['sort_dir'], null, false, null);
 
-        return $other + $filters + $folders;
+        return $other + $supplements + $filters + $folders;
     }
 
 
@@ -527,11 +541,10 @@ class Plugin_entries extends Plugin
         } else {
             // no blink content exists, get data the hard way
             if ($settings['taxonomy']) {
-                $taxonomy_parts  = Taxonomy::getCriteria(URL::getCurrent());
-                $taxonomy_type   = $taxonomy_parts[0];
-                $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy_parts[1]) : urldecode($taxonomy_parts[1]);
+                $taxonomy  = Taxonomy::getCriteria(URL::getCurrent());
+                $taxonomy_slug   = Config::get('_taxonomy_slugify') ? Slug::humanize($taxonomy['slug']) : urldecode($taxonomy['slug']);
 
-                $content_set = ContentService::getContentByTaxonomyValue($taxonomy_type, $taxonomy_slug, $settings['folders']);
+                $content_set = ContentService::getContentByTaxonomyValue($taxonomy['type'], $taxonomy_slug, $settings['folders']);
             } else {
                 $content_set = ContentService::getContentByFolders($settings['folders']);
             }
@@ -539,8 +552,19 @@ class Plugin_entries extends Plugin
             // filter
             $content_set->filter($settings);
 
+            // grab total entries for setting later
+            $total_entries = $content_set->count();
+
+            // pre-sort supplement
+            $content_set->supplement(array('total_found' => $total_entries) + $settings);
+
             // sort
-            $content_set->sort($settings['sort_by'], $settings['sort_dir']);
+            $content_set->multisort($settings['sort']);            
+            
+            // post-sort supplement
+            $content_set->supplement(array(
+                'group_by_date' => trim($this->fetchParam("group_by_date", null, null, false, false))
+            ), true);
 
             // store content as blink content for future use
             $this->blink->set($content_hash, $content_set->extract());

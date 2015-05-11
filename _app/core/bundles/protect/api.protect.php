@@ -48,9 +48,9 @@ class API_protect extends API
         $scheme = $data['_protect'];
 
         // determine URLs
-        $login_url       = array_get($scheme, 'login_url', $this->fetchConfig('login_url', '/', null, false, false));
-        $no_access_url   = array_get($scheme, 'no_access_url', $this->fetchConfig('no_access_url', '/', null, false, false));
-        $password_url    = array_get($scheme, 'password_form_url', $this->fetchConfig('password_url', '/', null, false, false));
+        $login_url       = URL::prependSiteRoot(array_get($scheme, 'login_url', $this->fetchConfig('login_url', '/', null, false, false)));
+        $no_access_url   = URL::prependSiteRoot(array_get($scheme, 'no_access_url', $this->fetchConfig('no_access_url', '/', null, false, false)));
+        $password_url    = URL::prependSiteRoot(array_get($scheme, 'password_form_url', $this->fetchConfig('password_url', '/', null, false, false)));
         
         // support external log-in systems
         $require_member  = array_get($scheme, 'require_member', $this->fetchConfig('require_member', true, null, true, false));
@@ -59,6 +59,11 @@ class API_protect extends API
         
         // get the current URL
         $current_url     = ($use_full_url) ? URL::tidy(Config::getSiteURL() . '/' . URL::getCurrent()) : URL::getCurrent();
+        
+        // append query string
+        if (!empty($_GET)) {
+            $current_url .= '?' . http_build_query($_GET, '', '&');
+        }
 
         // store if we've matched
         $match = false;
@@ -134,8 +139,8 @@ class API_protect extends API
             }
         }
     }
-    
-    
+
+
     /**
      * Evaluates a password for a given $url
      * 
