@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+git config --global user.email "systems@rupeal.com"
+git config --global user.name "WeAreSWAT"
+
+echo "Update the code from the main repo..."
+cd tmp/kwan-website/
+# force a clean state
+git reset --hard origin/master
+git pull origin master
+
+echo "Move all the files to the site folder..."
+cp -R * ../../public_html
+
+echo "Done!"
+
+

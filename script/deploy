@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Deployment to production
+# --
+# This will send all files via FTP to the website's host.
+# It assumes that FTP_USER and FTP_PASSWORD is on the ENV
+
+echo "Updating live website..."
+CURR_COMMIT=$(git log --pretty=format:'%h' -n 1)
+echo "Current commit hash is $CURR_COMMIT"
+
+rsync script/remote-deploy kwan-website:~
+ssh kwan-website 'sh remote-deploy'
+
+
